@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+//Файл для использования функции
+
+require_once DIR . '/../vendor/autoload.php';
+use function App\Gre\isGreetings;
+
+isGreetings();
