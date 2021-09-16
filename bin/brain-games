@@ -4,5 +4,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 use function App\Gre\isGreetings;
+use function App\Even\isNumberAreEven;
 
 isGreetings();
+isNumberAreEven();

@@ -3,7 +3,8 @@
     "license": "MIT",
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/brain-even.php"
         ]
     },
 
@@ -15,7 +16,8 @@
     ],
 
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
 
     "require": {
