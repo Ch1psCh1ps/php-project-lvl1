@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+//Файл для использования функции
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function App\Calc\itIsRandomCalc;
+
+itIsRandomCalc();
