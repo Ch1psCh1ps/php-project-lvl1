@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Calc;
 
 use function App\Gre\isGreetings;
@@ -26,13 +25,13 @@ function itIsRandomCalc()
         $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
-            if ($answer == $result) {
+        if ($answer == $result) {
                 line('Correct!');
-            } else {
+        } else {
                 line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.
 Let's try again, {$name}!");
                 die();
-            }
+        }
     }
     line('Congratulations, ' . "{$name}!");
 }

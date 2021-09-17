@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-//Файл для использования функции isGreetings
 
 require_once __DIR__ . '/../vendor/autoload.php';
 use function App\Gre\isGreetings;

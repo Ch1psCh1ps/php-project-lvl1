@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Gcd;
 
 use function App\Gre\isGreetings;
@@ -20,8 +19,8 @@ function greatestCommonFactor()
                 $m = $randomInt % $randomInt1;
                 $randomInt = $randomInt1;
                 $randomInt1 = $m;
-            }
-        $result = $randomInt;
+        }
+            $result = $randomInt;
         if ($answer == $result) {
             line('Correct!');
         } else {

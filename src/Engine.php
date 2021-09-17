@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Engine;
 
 use function cli\line;

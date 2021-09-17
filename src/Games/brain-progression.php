@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Progression;
 
 use function App\Gre\isGreetings;
@@ -9,7 +8,7 @@ use function cli\prompt;
 function isProgression()
 {
     $name = isGreetings();
-    for ($i= 0; $i < 3; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $randProgressionSize = random_int(5, 10);
         $randPosition = random_int(1, $randProgressionSize);
         $randStepInProgression = random_int(1, 5);
