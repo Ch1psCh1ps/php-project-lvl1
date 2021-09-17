@@ -4,8 +4,12 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/brain-even.php",
-            "src/brain-calc.php"
+            "src/Games/brain-even.php",
+            "src/Games/brain-calc.php",
+            "src/Engine.php",
+            "src/Games/brain-gcd.php",
+            "src/Games/brain-progression.php",
+            "src/Games/brain-prime.php"
         ]
     },
 
@@ -19,7 +23,10 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
 
     "require": {

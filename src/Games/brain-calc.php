@@ -2,16 +2,13 @@
 
 namespace App\Calc;
 
+use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
 function itIsRandomCalc()
 {
-    line('Welcome to the Brain Game!');
-    global $name;
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What is the result of the expression?');
+    $name = isGreetings();
     $result = '';
     for ($i = 0; $i < 3; $i++) {
         $randomInt = random_int(0, 99);
@@ -26,14 +23,14 @@ function itIsRandomCalc()
         } else {
             $result = $randomInt * $randomInt1;
         }
-        $uravnenie = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
-        line('Question:' . ' ' . $uravnenie);
+        $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
+        line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
             if ($answer == $result) {
                 line('Correct!');
             } else {
                 line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.
-Let's try again, {$name}");
+Let's try again, {$name}!");
                 die();
             }
     }
