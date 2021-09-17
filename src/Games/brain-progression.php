@@ -26,6 +26,7 @@ function isProgression()
                 $question .= " {$cufra}";
             }
         }
+        line('What number is missing in the progression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         if ($answer == $result) {

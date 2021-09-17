@@ -23,6 +23,7 @@ function itIsRandomCalc()
             $result = $randomInt * $randomInt1;
         }
         $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
+        line('What is the result of the expression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         if ($answer == $result) {

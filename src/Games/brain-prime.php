@@ -13,6 +13,7 @@ function isPrime()
     for ($i = 0; $i < 3; $i++) {
         $randomInt = random_int(1, 50);
         $question = $randomInt;
+        line('Answer "yes" if given number is prime. Otherwise answer "no".');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         for ($t = $randomInt; $t > 2; $t--) {
