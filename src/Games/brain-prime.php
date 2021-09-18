@@ -8,6 +8,9 @@ use function cli\prompt;
 
 function verifyPrimeNumber($tally)
 {
+    if ($tally === 1) {
+        return false;
+    }
     for ($t = 2; $t <= $tally / 2; $t++) {
         if ($tally % $t == 0) {
             return false;
