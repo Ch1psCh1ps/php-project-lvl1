@@ -10,7 +10,7 @@ function isProgression()
 {
     $name = isGreetings();
     for ($i = 0; $i < 3; $i++) {
-        $randProgressionSize = random_int(5, 10);
+        $randProgressionSize = random_int(6, 10);
         $randPosition = random_int(1, $randProgressionSize);
         $randStepInProgression = random_int(1, 5);
         $randProgressionArray = [1];
@@ -24,7 +24,7 @@ function isProgression()
             }
             $randProgressionArray[] = $randProgressionArray[$t] + $randStepInProgression;
             if ($t >= 1) {
-                $question .= " {$cufra}";
+                $question .= "{$cufra} ";
             }
         }
         line('What number is missing in the progression?');
