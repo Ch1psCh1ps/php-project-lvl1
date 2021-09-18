@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Even;
 
 use function App\Gre\isGreetings;

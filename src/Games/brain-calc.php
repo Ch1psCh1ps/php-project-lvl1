@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Calc;
 
 use function App\Gre\isGreetings;

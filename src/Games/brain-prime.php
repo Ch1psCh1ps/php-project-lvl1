@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Prime;
 
 use function App\Gre\isGreetings;

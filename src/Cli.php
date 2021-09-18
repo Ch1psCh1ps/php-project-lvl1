@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Gre;
 
 use function cli\line;

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Gcd;
 
 use function App\Gre\isGreetings;

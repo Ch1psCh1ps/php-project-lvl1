@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Progression;
 
 use function App\Gre\isGreetings;
