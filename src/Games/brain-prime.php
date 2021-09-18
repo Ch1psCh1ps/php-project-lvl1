@@ -32,7 +32,7 @@ function isPrime()
             $trueAnswer = 'no';
         }
         if ($answer === $trueAnswer) {
-           line('Correct!');
+            line('Correct!');
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$trueAnswer}'.
 Let's try again, {$name}!");
