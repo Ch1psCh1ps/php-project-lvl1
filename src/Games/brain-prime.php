@@ -9,12 +9,12 @@ use function cli\prompt;
 function isPrime()
 {
     $name = isGreetings();
-    $result = '';
-    $question = '';
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
+        $result = '';
+        $question = '';
         $randomInt = random_int(1, 50);
         $question = $randomInt;
-        line('Answer "yes" if given number is prime. Otherwise answer "no".');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         for ($t = $randomInt; $t > 2; $t--) {
