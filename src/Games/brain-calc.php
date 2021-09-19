@@ -28,7 +28,7 @@ function itIsRandomCalc(): void
         line('What is the result of the expression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
-        (string)$trueAnswer = $result;
+        $trueAnswer = "{$result}";
         engine($answer, $trueAnswer);
     }
     line('Congratulations, ' . "{$name}!");

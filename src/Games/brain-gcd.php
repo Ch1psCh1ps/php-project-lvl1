@@ -22,7 +22,7 @@ function greatestCommonFactor(): void
                 $randomInt = $randomInt1;
                 $randomInt1 = $m;
         }
-        (string)$result = $randomInt;
+        $result = "{$randomInt}";
         engine($answer, $result);
     }
     line('Congratulations, ' . "{$name}!");

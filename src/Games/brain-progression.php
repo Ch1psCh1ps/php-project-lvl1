@@ -20,7 +20,7 @@ function isProgression(): void
         for ($t = 0; $t <= $randProgressionSize; $t++) {
             if ($t === $randPosition) {
                 $cufra = "..";
-                (string)$result = $randProgressionArray[$randPosition];
+                $result = "{$randProgressionArray[$randPosition]}";
             } else {
                 $cufra = $randProgressionArray[$t];
             }
