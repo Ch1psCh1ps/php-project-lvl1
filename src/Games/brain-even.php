@@ -10,9 +10,9 @@ use function cli\prompt;
 function isNumberAreEven(): void
 {
     $name = isGreetings();
+    line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
         $randomInt = random_int(0, 99);
-        line('Answer "yes" if the number is even, otherwise answer "no".');
         line('Question:' . ' ' . $randomInt);
         $answer = prompt('Your answer');
         if ($randomInt % 2 === 0) {

@@ -10,6 +10,7 @@ use function cli\prompt;
 function itIsRandomCalc(): void
 {
     $name = isGreetings();
+    line('What is the result of the expression?');
     for ($i = 0; $i < 3; $i++) {
         $result = '';
         $randomInt = random_int(0, 99);
@@ -25,7 +26,6 @@ function itIsRandomCalc(): void
             $result = $randomInt * $randomInt1;
         }
         $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
-        line('What is the result of the expression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         $trueAnswer = "{$result}";

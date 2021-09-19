@@ -10,6 +10,7 @@ use function cli\prompt;
 function isProgression(): void
 {
     $name = isGreetings();
+    line('What number is missing in the progression?');
     for ($i = 0; $i < 3; $i++) {
         $randProgressionSize = random_int(6, 10);
         $randPosition = random_int(1, $randProgressionSize);
@@ -29,7 +30,6 @@ function isProgression(): void
                 $question .= "{$cufra} ";
             }
         }
-        line('What number is missing in the progression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         engine($answer, $result);
