@@ -1,6 +1,6 @@
 <?php
 
-// engine all
+/** engine all */
 namespace App\Engine;
 
 use function cli\line;

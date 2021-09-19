@@ -1,6 +1,6 @@
 <?php
 
-// greetings
+/** greetings */
 namespace App\Gre;
 
 use function cli\line;

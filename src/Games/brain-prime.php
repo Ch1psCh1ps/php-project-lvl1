@@ -1,6 +1,6 @@
 <?php
 
-// Brain prime
+/** Brain prime */
 namespace App\Prime;
 
 use function App\Engine\engine;

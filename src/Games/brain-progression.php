@@ -1,6 +1,6 @@
 <?php
 
-// Brain progression
+/** Brain progression */
 namespace App\Progression;
 
 use function App\Engine\engine;

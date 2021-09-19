@@ -1,6 +1,6 @@
 <?php
 
-// Brain GCD
+/** Brain GCD */
 namespace App\Gcd;
 
 use function App\Engine\engine;

@@ -1,6 +1,6 @@
 <?php
 
-//Brain-calc
+/** Brain-calc */
 namespace App\Calc;
 
 use function App\Engine\engine;

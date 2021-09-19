@@ -1,6 +1,6 @@
 <?php
 
-//Brain even
+/** Brain even */
 namespace App\Even;
 
 use function App\Engine\engine;
