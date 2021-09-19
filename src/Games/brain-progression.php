@@ -16,6 +16,7 @@ function isProgression(): void
         $randStepInProgression = random_int(1, 5);
         $randProgressionArray = [1];
         $question = '';
+        $result = '';
         for ($t = 0; $t <= $randProgressionSize; $t++) {
             if ($t === $randPosition) {
                 $cufra = "..";

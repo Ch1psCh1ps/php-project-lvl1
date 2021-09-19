@@ -7,7 +7,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function verifyPrimeNumber($tally): int
+function verifyPrimeNumber(int $tally): int
 {
     if ($tally === 1) {
         return 0;
