@@ -1,5 +1,6 @@
 <?php
 
+// Brain GCD
 namespace App\Gcd;
 
 use function App\Engine\engine;
@@ -7,7 +8,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function greatestCommonFactor(): void
+function greatestCommonFactor(): void //Brain GCD
 {
     $name = isGreetings();
     line('Find the greatest common divisor of given numbers.');

@@ -1,5 +1,6 @@
 <?php
 
+// Brain progression
 namespace App\Progression;
 
 use function App\Engine\engine;
@@ -7,7 +8,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function isProgression(): void
+function isProgression(): void // Progression
 {
     $name = isGreetings();
     line('What number is missing in the progression?');

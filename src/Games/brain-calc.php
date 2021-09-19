@@ -1,5 +1,6 @@
 <?php
 
+//Brain-calc
 namespace App\Calc;
 
 use function App\Engine\engine;
@@ -7,7 +8,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function itIsRandomCalc(): void
+function itIsRandomCalc(): void // Random calculator
 {
     $name = isGreetings();
     line('What is the result of the expression?');
