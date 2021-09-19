@@ -2,11 +2,12 @@
 
 namespace App\Progression;
 
+use function App\Engine\engine;
 use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function isProgression()
+function isProgression(): void
 {
     $name = isGreetings();
     for ($i = 0; $i < 3; $i++) {
@@ -30,13 +31,7 @@ function isProgression()
         line('What number is missing in the progression?');
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
-        if ($answer == $result) {
-            line('Correct!');
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.
-Let's try again, {$name}!");
-            die();
-        }
+        engine($answer, $result);
     }
     line('Congratulations, ' . "{$name}!");
 }

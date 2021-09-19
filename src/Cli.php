@@ -5,7 +5,7 @@ namespace App\Gre;
 use function cli\line;
 use function cli\prompt;
 
-function isGreetings()
+function isGreetings(): string
 {
     line('Welcome to the Brain Game!');
     global $name;

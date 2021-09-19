@@ -2,24 +2,25 @@
 
 namespace App\Prime;
 
+use function App\Engine\engine;
 use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function verifyPrimeNumber($tally)
+function verifyPrimeNumber($tally): int
 {
     if ($tally === 1) {
-        return false;
+        return 0;
     }
     for ($t = 2; $t <= $tally / 2; $t++) {
         if ($tally % $t == 0) {
-            return false;
+            return 0;
         }
     }
-    return true;
+    return 1;
 }
 
-function isPrime()
+function isPrime(): void
 {
     $name = isGreetings();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -29,18 +30,12 @@ function isPrime()
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         $result = verifyPrimeNumber($randomInt);
-        if ($result === true) {
+        if ($result == 1) {
             $trueAnswer = 'yes';
         } else {
             $trueAnswer = 'no';
         }
-        if ($answer === $trueAnswer) {
-            line('Correct!');
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$trueAnswer}'.
-Let's try again, {$name}!");
-            die();
-        }
+        engine($answer, $trueAnswer);
     }
     line('Congratulations, ' . "{$name}!");
 }
