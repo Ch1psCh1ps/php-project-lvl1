@@ -1,11 +1,10 @@
 <?php
 
-/** engine all */
 namespace App\Engine;
 
 use function cli\line;
 
-function engine(string $answer, string $result): bool // engine
+function engine(string $answer, string $result): bool
 {
     global $name;
     if ($answer == $result) {

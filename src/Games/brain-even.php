@@ -1,6 +1,5 @@
 <?php
 
-/** Brain even */
 namespace App\Even;
 
 use function App\Engine\engine;
@@ -8,7 +7,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function isNumberAreEven(): void // Number even
+function isNumberAreEven(): void
 {
     $name = isGreetings();
     line('Answer "yes" if the number is even, otherwise answer "no".');

@@ -1,6 +1,5 @@
 <?php
 
-/** Brain prime */
 namespace App\Prime;
 
 use function App\Engine\engine;
@@ -8,7 +7,7 @@ use function App\Gre\isGreetings;
 use function cli\line;
 use function cli\prompt;
 
-function verifyPrimeNumber(int $tally): int //Prime or not
+function verifyPrimeNumber(int $tally): int
 {
     if ($tally === 1) {
         return 0;
@@ -21,7 +20,7 @@ function verifyPrimeNumber(int $tally): int //Prime or not
     return 1;
 }
 
-function isPrime(): void //game
+function isPrime(): void
 {
     $name = isGreetings();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
