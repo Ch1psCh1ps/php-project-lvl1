@@ -6,7 +6,7 @@ use function App\Engine\toDoOpensAnswerCheck;
 use function cli\line;
 use function cli\prompt;
 
-function toDoStartBrainPrime(int $tally): int
+function verifyPrimeNumber(int $tally): int
 {
     if ($tally === 1) {
         return 0;
@@ -19,7 +19,7 @@ function toDoStartBrainPrime(int $tally): int
     return 1;
 }
 
-function isPrime(): void
+function toDoStartBrainPrime(): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
