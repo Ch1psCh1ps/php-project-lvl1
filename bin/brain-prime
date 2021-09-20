@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function App\Prime\isPrime;
+use function App\Prime\toDoStartBrainPrime;
 
-isPrime();
+toDoStartBrainPrime();

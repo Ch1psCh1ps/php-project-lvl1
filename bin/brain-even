@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function App\Even\isNumberAreEven;
+use function App\Even\toDoStartBrainEven;
 
-isNumberAreEven();
+toDoStartBrainEven();

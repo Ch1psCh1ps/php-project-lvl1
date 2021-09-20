@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function App\Progression\isProgression;
+use function App\Progression\toDoStartBrainProgression;
 
-isProgression();
+toDoStartBrainProgression();

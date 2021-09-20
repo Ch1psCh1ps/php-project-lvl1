@@ -2,14 +2,15 @@
 
 namespace App\Progression;
 
-use function App\Engine\engine;
-use function App\Gre\isGreetings;
+use function App\Engine\toDoOpensAnswerCheck;
 use function cli\line;
 use function cli\prompt;
 
-function isProgression(): void
+function toDoStartBrainProgression(): void
 {
-    $name = isGreetings();
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     line('What number is missing in the progression?');
     for ($i = 0; $i < 3; $i++) {
         $randProgressionSize = random_int(6, 10);
@@ -32,7 +33,7 @@ function isProgression(): void
         }
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
-        engine($answer, $result);
+        toDoOpensAnswerCheck($answer, $result, $name);
     }
     line('Congratulations, ' . "{$name}!");
 }

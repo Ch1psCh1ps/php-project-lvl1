@@ -2,14 +2,15 @@
 
 namespace App\Gcd;
 
-use function App\Engine\engine;
-use function App\Gre\isGreetings;
+use function App\Engine\toDoOpensAnswerCheck;
 use function cli\line;
 use function cli\prompt;
 
-function greatestCommonFactor(): void
+function toDoStartBrainGcd(): void
 {
-    $name = isGreetings();
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     line('Find the greatest common divisor of given numbers.');
     for ($i = 0; $i < 3; $i++) {
         $randomInt = random_int(0, 99);
@@ -23,7 +24,7 @@ function greatestCommonFactor(): void
                 $randomInt1 = $m;
         }
         $result = "{$randomInt}";
-        engine($answer, $result);
+        toDoOpensAnswerCheck($answer, $result, $name);
     }
     line('Congratulations, ' . "{$name}!");
 }

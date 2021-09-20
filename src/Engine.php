@@ -4,9 +4,8 @@ namespace App\Engine;
 
 use function cli\line;
 
-function engine(string $answer, string $result): bool
+function toDoOpensAnswerCheck(string $answer, string $result, string $name): bool
 {
-    global $name;
     if ($answer == $result) {
         line('Correct!');
         return true;

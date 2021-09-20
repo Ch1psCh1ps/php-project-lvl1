@@ -2,14 +2,15 @@
 
 namespace App\Calc;
 
-use function App\Engine\engine;
-use function App\Gre\isGreetings;
+use function App\Engine\toDoOpensAnswerCheck;
 use function cli\line;
 use function cli\prompt;
 
-function itIsRandomCalc(): void
+function toDoStarBrainCalc(): void
 {
-    $name = isGreetings();
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     line('What is the result of the expression?');
     for ($i = 0; $i < 3; $i++) {
         $result = '';
@@ -29,7 +30,7 @@ function itIsRandomCalc(): void
         line('Question:' . ' ' . $question);
         $answer = prompt('Your answer');
         $trueAnswer = "{$result}";
-        engine($answer, $trueAnswer);
+        toDoOpensAnswerCheck($answer, $trueAnswer, $name);
     }
     line('Congratulations, ' . "{$name}!");
 }

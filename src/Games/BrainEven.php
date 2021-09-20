@@ -2,15 +2,15 @@
 
 namespace App\Even;
 
-use function App\Engine\engine;
-use function App\Gre\isGreetings;
+use function App\Engine\toDoOpensAnswerCheck;
 use function cli\line;
 use function cli\prompt;
 
-function isNumberAreEven(): void
+function toDoStartBrainEven(): void
 {
-    $name = isGreetings();
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     for ($i = 0; $i < 3; $i++) {
         $randomInt = random_int(0, 99);
         line('Question:' . ' ' . $randomInt);
@@ -20,7 +20,7 @@ function isNumberAreEven(): void
         } else {
             $trueAnswer = 'no';
         }
-        engine($answer, $trueAnswer);
+        toDoOpensAnswerCheck($answer, $trueAnswer, $name);
     }
     line('Congratulations, ' . "{$name}!");
 }
