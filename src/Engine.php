@@ -23,7 +23,7 @@ function opensAnswerCheck($function): bool
         if ($answer == $questionForComparisons) {
             line('Correct!');
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$gameTrueAnswer}'. Let's try again, {$name}");
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$gameTrueAnswer}'. Let's try again, {$name}!");
             die();
         }
     }
