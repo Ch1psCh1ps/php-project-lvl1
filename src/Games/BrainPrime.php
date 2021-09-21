@@ -24,7 +24,7 @@ function startBrainPrime(): void
         $question = $randomInt;
         $result = verifyPrimeNumber($randomInt);
         $trueAnswer = ($result === 1) ? 'yes' : 'no';
-        if ($trueAnswer === 'yes') {
+        if ($trueAnswer == 'yes') {
             $questionForComparisons = 'yes';
         } else {
             $questionForComparisons = 'no';

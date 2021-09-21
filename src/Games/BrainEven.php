@@ -10,7 +10,7 @@ function startBrainEven(): void
         $randomInt = random_int(0, 99);
         $question = $randomInt;
         $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';
-        if ($trueAnswer === 'yes') {
+        if ($trueAnswer == 'yes') {
             $questionForComparisons = 'yes';
         } else {
             $questionForComparisons = 'no';
