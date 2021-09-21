@@ -1,30 +1,29 @@
 <?php
 
-namespace App\Gcd;
+namespace Brain\Games\BrainGcd;
 
-use function App\Engine\toDoOpensAnswerCheck;
-use function cli\line;
-use function cli\prompt;
+use function App\Engine\opensAnswerCheck;
 
-function toDoStartBrainGcd(): void
+function startBrainGcd(): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('Find the greatest common divisor of given numbers.');
-    for ($i = 0; $i < 3; $i++) {
+    $GcdFunction = function () {
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
         $question = "{$randomInt} {$randomInt1}";
-        line('Question:' . ' ' . $question);
-        $answer = prompt('Your answer');
         while ($randomInt1 != 0) {
-                $m = $randomInt % $randomInt1;
-                $randomInt = $randomInt1;
-                $randomInt1 = $m;
+            $m = $randomInt % $randomInt1;
+            $randomInt = $randomInt1;
+            $randomInt1 = $m;
         }
-        $result = "{$randomInt}";
-        toDoOpensAnswerCheck($answer, $result, $name);
-    }
-    line('Congratulations, ' . "{$name}!");
+        $trueAnswer = "{$randomInt}";
+        $lineCalc = 'Find the greatest common divisor of given numbers.';
+        $arrayFromGames = [];
+        $arrayFromGames[] = $lineCalc;
+        $arrayFromGames[] = $trueAnswer;
+        $arrayFromGames[] = $question;
+        $questionForComparisons = $trueAnswer;
+        $arrayFromGames[] = $questionForComparisons;
+        return $arrayFromGames;
+    };
+    opensAnswerCheck($GcdFunction);
 }

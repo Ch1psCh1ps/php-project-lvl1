@@ -1,39 +1,45 @@
 <?php
 
-namespace App\Progression;
+namespace Brain\Games\BrainProgression;
 
-use function App\Engine\toDoOpensAnswerCheck;
-use function cli\line;
-use function cli\prompt;
+use function App\Engine\opensAnswerCheck;
 
-function toDoStartBrainProgression(): void
+function createProgression()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What number is missing in the progression?');
-    for ($i = 0; $i < 3; $i++) {
-        $randProgressionSize = random_int(6, 10);
-        $randPosition = random_int(1, $randProgressionSize);
+    $randProgressionSize = random_int(6, 10);
+    for ($t = 0; $t <= $randProgressionSize; $t++) {
         $randStepInProgression = random_int(1, 5);
         $randProgressionArray = [1];
-        $question = '';
-        $result = '';
-        for ($t = 0; $t <= $randProgressionSize; $t++) {
-            if ($t === $randPosition) {
-                $cufra = "..";
-                $result = "{$randProgressionArray[$randPosition]}";
-            } else {
-                $cufra = $randProgressionArray[$t];
-            }
-            $randProgressionArray[] = $randProgressionArray[$t] + $randStepInProgression;
-            if ($t >= 1) {
-                $question .= "{$cufra} ";
-            }
-        }
-        line('Question:' . ' ' . $question);
-        $answer = prompt('Your answer');
-        toDoOpensAnswerCheck($answer, $result, $name);
+        $randProgressionArray[] = $randProgressionArray[$t] + $randStepInProgression;
+        $cufra = $randProgressionArray[$t];
+        $qustion = "{$randProgressionArray}";
     }
-    line('Congratulations, ' . "{$name}!");
+    return $qustion;
+}
+
+function isResultEnd()
+{
+    $randProgressionSize = random_int(6, 10);
+    $randPosition = random_int(1, $randProgressionSize);
+    $randProgressionArray = [1];
+    $result = "$randProgressionArray[$randPosition]";
+    return $result;
+}
+
+function startBrainProgression(): void
+{
+    $gcdFunction = function () {
+        $resultEnd = isResultEnd();
+        $question = createProgression();
+        $lineCalc = 'What number is missing in the progression?';
+
+        $trueAnswer = $resultEnd;
+
+        $arrayFromGames = [];
+        $arrayFromGames[] = $lineCalc;
+        $arrayFromGames[] = $trueAnswer;
+        $arrayFromGames[] = $question;
+        return $arrayFromGames;
+    };
+    opensAnswerCheck($gcdFunction);
 }

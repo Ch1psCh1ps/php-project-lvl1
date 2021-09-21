@@ -1,24 +1,19 @@
 <?php
 
-namespace App\Calc;
+namespace Brain\Games\BrainCalc;
 
-use function App\Engine\toDoOpensAnswerCheck;
-use function cli\line;
-use function cli\prompt;
+use function App\Engine\opensAnswerCheck;
 
-function toDoStarBrainCalc(): void
+function startBrainCalc(): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What is the result of the expression?');
-    for ($i = 0; $i < 3; $i++) {
-        $result = '';
+    $calcFunction = function () {
+        $lineCalc = 'What is the result of the expression?';
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
         $randomArray = ['+', '-', '*'];
         $randomZnak = array_rand($randomArray, 1);
         $randomZnakEnd = $randomArray[$randomZnak];
+
         if ($randomZnakEnd === '-') {
             $result = $randomInt - $randomInt1;
         } elseif ($randomZnakEnd === '+') {
@@ -26,11 +21,16 @@ function toDoStarBrainCalc(): void
         } else {
             $result = $randomInt * $randomInt1;
         }
+
         $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
-        line('Question:' . ' ' . $question);
-        $answer = prompt('Your answer');
         $trueAnswer = "{$result}";
-        toDoOpensAnswerCheck($answer, $trueAnswer, $name);
-    }
-    line('Congratulations, ' . "{$name}!");
+        $arrayFromGames = [];
+        $arrayFromGames[] = $lineCalc;
+        $arrayFromGames[] = $trueAnswer;
+        $arrayFromGames[] = $question;
+        $questionForComparisons = "{$result}";
+        $arrayFromGames[] = $questionForComparisons;
+        return $arrayFromGames;
+    };
+    opensAnswerCheck($calcFunction);
 }

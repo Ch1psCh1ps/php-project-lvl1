@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Prime;
+namespace Brain\Games\BrainPrime;
 
-use function App\Engine\toDoOpensAnswerCheck;
-use function cli\line;
-use function cli\prompt;
+use function App\Engine\opensAnswerCheck;
 
 function verifyPrimeNumber(int $tally): int
 {
@@ -19,24 +17,25 @@ function verifyPrimeNumber(int $tally): int
     return 1;
 }
 
-function toDoStartBrainPrime(): void
+function startBrainPrime(): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    for ($i = 0; $i < 3; $i++) {
+    $gcdFunction = function () {
         $randomInt = rand(1, 50);
         $question = $randomInt;
-        line('Question:' . ' ' . $question);
-        $answer = prompt('Your answer');
         $result = verifyPrimeNumber($randomInt);
-        if ($result == 1) {
-            $trueAnswer = 'yes';
+        $trueAnswer = ($result === 1) ? 'yes' : 'no';
+        if ($trueAnswer === 'yes') {
+            $questionForComparisons = 'yes';
         } else {
-            $trueAnswer = 'no';
+            $questionForComparisons = 'no';
         }
-        toDoOpensAnswerCheck($answer, $trueAnswer, $name);
-    }
-    line('Congratulations, ' . "{$name}!");
+        $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+        $arrayFromGames = [];
+        $arrayFromGames[] = $lineCalc;
+        $arrayFromGames[] = $trueAnswer;
+        $arrayFromGames[] = $question;
+        $arrayFromGames[] = $questionForComparisons;
+        return $arrayFromGames;
+    };
+    opensAnswerCheck($gcdFunction);
 }

@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Even;
+namespace Brain\Games\BrainEven;
 
-use function App\Engine\toDoOpensAnswerCheck;
-use function cli\line;
-use function cli\prompt;
+use function App\Engine\opensAnswerCheck;
 
-function toDoStartBrainEven(): void
+function startBrainEven(): void
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    for ($i = 0; $i < 3; $i++) {
+    $evenFunction = function () {
         $randomInt = random_int(0, 99);
-        line('Question:' . ' ' . $randomInt);
-        $answer = prompt('Your answer');
-        if ($randomInt % 2 === 0) {
-            $trueAnswer = 'yes';
+        $question = $randomInt;
+        $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';
+        if ($trueAnswer === 'yes') {
+            $questionForComparisons = 'yes';
         } else {
-            $trueAnswer = 'no';
+            $questionForComparisons = 'no';
         }
-        toDoOpensAnswerCheck($answer, $trueAnswer, $name);
-    }
-    line('Congratulations, ' . "{$name}!");
+        $lineCalc = 'Answer "yes" if the number is even, otherwise answer "no".';
+        $arrayFromGames = [];
+        $arrayFromGames[] = $lineCalc;
+        $arrayFromGames[] = $trueAnswer;
+        $arrayFromGames[] = $question;
+        $arrayFromGames[] = $questionForComparisons;
+        return $arrayFromGames;
+    };
+    opensAnswerCheck($evenFunction);
 }
