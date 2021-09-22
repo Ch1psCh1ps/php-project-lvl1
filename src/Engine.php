@@ -5,7 +5,7 @@ namespace App\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function opensAnswerCheck($function): bool
+function opensAnswerCheck(array $function): bool
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
