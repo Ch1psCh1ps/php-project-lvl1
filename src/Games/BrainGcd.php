@@ -25,5 +25,5 @@ function startBrainGcd(): void
         $arrayFromGames[] = $questionForComparisons;
         return $arrayFromGames;
     };
-    opensAnswerCheck($GcdFunction);
+    opensAnswerCheck((array)$GcdFunction);
 }

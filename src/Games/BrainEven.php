@@ -23,5 +23,5 @@ function startBrainEven(): void
         $arrayFromGames[] = $questionForComparisons;
         return $arrayFromGames;
     };
-    opensAnswerCheck($evenFunction);
+    opensAnswerCheck((array)$evenFunction);
 }

@@ -37,5 +37,5 @@ function startBrainProgression(): void
         $arrayFromGames[] = $gameValueResult;
         return $arrayFromGames;
     };
-    opensAnswerCheck($gcdFunction);
+    opensAnswerCheck((array)$gcdFunction);
 }

@@ -37,5 +37,5 @@ function startBrainPrime(): void
         $arrayFromGames[] = $questionForComparisons;
         return $arrayFromGames;
     };
-    opensAnswerCheck($gcdFunction);
+    opensAnswerCheck((array)$gcdFunction);
 }

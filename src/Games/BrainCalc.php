@@ -32,5 +32,5 @@ function startBrainCalc(): void
         $arrayFromGames[] = $questionForComparisons;
         return $arrayFromGames;
     };
-    opensAnswerCheck($calcFunction);
+    opensAnswerCheck((array)$calcFunction);
 }
