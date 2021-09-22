@@ -14,16 +14,17 @@ function opensAnswerCheck($function): bool
     for ($i = 0; $i < $count; $i++) {
         $gameArray = $function();
         $gameQuestion = $gameArray[0];
-        $gameTrueAnswer = $gameArray[1];
+        $trueAnswer = $gameArray[1];
         $question = $gameArray[2];
         $questionForComparisons = $gameArray[3];
+        $gameValueResult = $gameArray[4];
         line("{$gameQuestion}");
         line("Question: {$question}");
         $answer = prompt('Your answer');
-        if ($answer == $questionForComparisons) {
+        if ($answer == $questionForComparisons || $answer == $gameValueResult) {
             line('Correct!');
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$gameTrueAnswer}'. Let's try again, {$name}!");
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$trueAnswer}'. Let's try again, {$name}!");
             die();
         }
     }
