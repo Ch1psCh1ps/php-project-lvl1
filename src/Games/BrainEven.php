@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainEven(): void
 {
-    $evenFunction = function () {
+    $evenFunction = function (): array {
         $randomInt = random_int(0, 99);
         $question = $randomInt;
         $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';

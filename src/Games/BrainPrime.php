@@ -19,7 +19,7 @@ function verifyPrimeNumber(int $tally): int
 
 function startBrainPrime(): void
 {
-    $gcdFunction = function () {
+    $gcdFunction = function (): array {
         $randomInt = rand(1, 50);
         $question = $randomInt;
         $result = verifyPrimeNumber($randomInt);

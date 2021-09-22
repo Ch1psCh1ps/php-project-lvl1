@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainGcd(): void
 {
-    $GcdFunction = function () {
+    $GcdFunction = function (): array {
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
         $question = "{$randomInt} {$randomInt1}";

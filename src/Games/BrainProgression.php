@@ -4,9 +4,9 @@ namespace Brain\Games\BrainProgression;
 
 use function App\Engine\opensAnswerCheck;
 
-function startBrainProgression()
+function startBrainProgression(): void
 {
-    $gcdFunction = function () {
+    $gcdFunction = function (): array {
         $randProgressionSize = random_int(6, 10);
         $randPosition = random_int(1, $randProgressionSize);
         $randStepInProgression = random_int(1, 5);

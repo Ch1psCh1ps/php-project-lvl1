@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainCalc(): void
 {
-    $calcFunction = function () {
+    $calcFunction = function (): array {
         $lineCalc = 'What is the result of the expression?';
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
