@@ -23,7 +23,7 @@ function startBrainGcd(): void
         $arrayFromGames[] = $question;
         $questionForComparisons = $trueAnswer;
         $arrayFromGames[] = $questionForComparisons;
-        $gameValueResult= null;
+        $gameValueResult = null;
         $arrayFromGames[] = $gameValueResult;
         return $arrayFromGames;
     };
