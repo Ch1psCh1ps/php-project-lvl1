@@ -19,12 +19,13 @@ function startBrainProgression()
             } else {
                 $value = $randProgressionArray[$t];
             }
-            $trueAnswer = $result;
             $randProgressionArray[] = $randProgressionArray[$t] + $randStepInProgression;
             if ($t >= 1) {
                 $question .= "{$value} ";
             }
         }
+        /** @var $result integer */
+        $trueAnswer = $result;
         $gameValueResult = $result;
         $questionForComparisons = 'yes';
         $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
