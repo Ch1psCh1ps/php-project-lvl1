@@ -12,6 +12,7 @@ function startBrainProgression(): void
         $randStepInProgression = random_int(1, 5);
         $randProgressionArray = [1];
         $question = '';
+        $result = '';
         for ($t = 0; $t <= $randProgressionSize; $t++) {
             if ($t === $randPosition) {
                 $value = "..";
@@ -24,7 +25,6 @@ function startBrainProgression(): void
                 $question .= "{$value} ";
             }
         }
-        /** @var $result integer */
         $trueAnswer = $result;
         $gameValueResult = $result;
         $questionForComparisons = 'yes';
@@ -37,5 +37,5 @@ function startBrainProgression(): void
         $arrayFromGames[] = $gameValueResult;
         return $arrayFromGames;
     };
-    opensAnswerCheck((array)$gcdFunction);
+    opensAnswerCheck($gcdFunction);
 }
