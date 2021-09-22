@@ -19,7 +19,7 @@ function verifyPrimeNumber(int $tally): int
 
 function startBrainPrime(): void
 {
-    $gcdFunction = function (): array {
+    $gcdFunction = function () {
         $randomInt = rand(1, 50);
         $question = $randomInt;
         $result = verifyPrimeNumber($randomInt);
@@ -29,13 +29,17 @@ function startBrainPrime(): void
         } else {
             $questionForComparisons = 'no';
         }
+        $gameValueResult = null;
         $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
         $arrayFromGames = [];
         $arrayFromGames[] = $lineCalc;
         $arrayFromGames[] = $trueAnswer;
         $arrayFromGames[] = $question;
         $arrayFromGames[] = $questionForComparisons;
+        $arrayFromGames[] = $gameValueResult;
+        $gameValueResult = null;
+        $arrayFromGames[] = $gameValueResult;
         return $arrayFromGames;
     };
-    opensAnswerCheck((array)$gcdFunction);
+    opensAnswerCheck($gcdFunction);
 }

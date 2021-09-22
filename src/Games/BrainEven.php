@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainEven(): void
 {
-    $evenFunction = function (): array {
+    $evenFunction = function () {
         $randomInt = random_int(0, 99);
         $question = $randomInt;
         $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';
@@ -21,7 +21,9 @@ function startBrainEven(): void
         $arrayFromGames[] = $trueAnswer;
         $arrayFromGames[] = $question;
         $arrayFromGames[] = $questionForComparisons;
+        $gameValueResult = null;
+        $arrayFromGames[] = $gameValueResult;
         return $arrayFromGames;
     };
-    opensAnswerCheck((array)$evenFunction);
+    opensAnswerCheck($evenFunction);
 }
