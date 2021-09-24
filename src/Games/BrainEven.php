@@ -6,24 +6,14 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainEven(): void
 {
-    $evenFunction = function () {
-        $randomInt = random_int(0, 99);
+    $evenFunction = function (): array {
+        $randomInt = random_int(1, 99);
         $question = $randomInt;
         $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';
-        if ($trueAnswer == 'yes') {
-            $questionForComparisons = 'yes';
-        } else {
-            $questionForComparisons = 'no';
-        }
+        $questionForComparisons = ($randomInt % 2 === 0) ? 'yes' : 'no';
         $lineCalc = 'Answer "yes" if the number is even, otherwise answer "no".';
-        $arrayFromGames = [];
-        $arrayFromGames[] = $lineCalc;
-        $arrayFromGames[] = $trueAnswer;
-        $arrayFromGames[] = $question;
-        $arrayFromGames[] = $questionForComparisons;
         $gameValueResult = null;
-        $arrayFromGames[] = $gameValueResult;
-        return $arrayFromGames;
+        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
     };
     opensAnswerCheck($evenFunction);
 }

@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainGcd(): void
 {
-    $GcdFunction = function () {
+    $gcdFunction = function (): array {
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
         $question = "{$randomInt} {$randomInt1}";
@@ -17,15 +17,9 @@ function startBrainGcd(): void
         }
         $trueAnswer = "{$randomInt}";
         $lineCalc = 'Find the greatest common divisor of given numbers.';
-        $arrayFromGames = [];
-        $arrayFromGames[] = $lineCalc;
-        $arrayFromGames[] = $trueAnswer;
-        $arrayFromGames[] = $question;
         $questionForComparisons = $trueAnswer;
-        $arrayFromGames[] = $questionForComparisons;
         $gameValueResult = null;
-        $arrayFromGames[] = $gameValueResult;
-        return $arrayFromGames;
+        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
     };
-    opensAnswerCheck($GcdFunction);
+    opensAnswerCheck($gcdFunction);
 }

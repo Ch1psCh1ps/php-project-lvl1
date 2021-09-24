@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainCalc(): void
 {
-    $calcFunction = function () {
+    $calcFunction = function (): array {
         $lineCalc = 'What is the result of the expression?';
         $randomInt = random_int(0, 99);
         $randomInt1 = random_int(0, 99);
@@ -25,14 +25,8 @@ function startBrainCalc(): void
         $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
         $trueAnswer = "{$result}";
         $gameValueResult = null;
-        $arrayFromGames = [];
-        $arrayFromGames[] = $lineCalc;
-        $arrayFromGames[] = $trueAnswer;
-        $arrayFromGames[] = $question;
         $questionForComparisons = "{$result}";
-        $arrayFromGames[] = $questionForComparisons;
-        $arrayFromGames[] = $gameValueResult;
-        return $arrayFromGames;
+        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
     };
     opensAnswerCheck($calcFunction);
 }

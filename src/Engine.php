@@ -5,19 +5,14 @@ namespace App\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function opensAnswerCheck($function): bool
+function opensAnswerCheck(callable $function): bool
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     $count = 3;
     for ($i = 0; $i < $count; $i++) {
-        $gameArray = $function();
-        $gameQuestion = $gameArray[0];
-        $trueAnswer = $gameArray[1];
-        $question = $gameArray[2];
-        $questionForComparisons = $gameArray[3];
-        $gameValueResult = $gameArray[4];
+        [$gameQuestion, $trueAnswer, $question, $questionForComparisons, $gameValueResult] = $function();
         line("{$gameQuestion}");
         line("Question: {$question}");
         $answer = prompt('Your answer');

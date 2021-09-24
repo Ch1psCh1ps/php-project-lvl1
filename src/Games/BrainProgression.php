@@ -6,7 +6,7 @@ use function App\Engine\opensAnswerCheck;
 
 function startBrainProgression(): void
 {
-    $gcdFunction = function (): array {
+    $progressionFunction = function (): array {
         $randProgressionSize = random_int(6, 10);
         $randPosition = random_int(1, $randProgressionSize);
         $randStepInProgression = random_int(1, 5);
@@ -27,15 +27,9 @@ function startBrainProgression(): void
         }
         $trueAnswer = $result;
         $gameValueResult = $result;
-        $questionForComparisons = 'yes';
+        $questionForComparisons = null;
         $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        $arrayFromGames = [];
-        $arrayFromGames[] = $lineCalc;
-        $arrayFromGames[] = $trueAnswer;
-        $arrayFromGames[] = $question;
-        $arrayFromGames[] = $questionForComparisons;
-        $arrayFromGames[] = $gameValueResult;
-        return $arrayFromGames;
+        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
     };
-    opensAnswerCheck($gcdFunction);
+    opensAnswerCheck($progressionFunction);
 }
