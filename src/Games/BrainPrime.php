@@ -24,10 +24,8 @@ function startBrainPrime(): void
         $question = $randomInt;
         $result = verifyPrimeNumber($randomInt);
         $trueAnswer = ($result === 1) ? 'yes' : 'no';
-        $questionForComparisons = ($result === 1) ? 'yes' : 'no';
-        $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        $gameValueResult = null;
-        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
+        $lineOfRulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
     };
     opensAnswerCheck($primeFunction);
 }

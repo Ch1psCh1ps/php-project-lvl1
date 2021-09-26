@@ -7,13 +7,11 @@ use function App\Engine\opensAnswerCheck;
 function startBrainEven(): void
 {
     $evenFunction = function (): array {
-        $randomInt = random_int(1, 99);
+        $randomInt = rand(1, 99);
         $question = $randomInt;
         $trueAnswer = ($randomInt % 2 === 0) ? 'yes' : 'no';
-        $questionForComparisons = ($randomInt % 2 === 0) ? 'yes' : 'no';
-        $lineCalc = 'Answer "yes" if the number is even, otherwise answer "no".';
-        $gameValueResult = null;
-        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
+        $lineOfRulesOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
     };
     opensAnswerCheck($evenFunction);
 }

@@ -7,9 +7,9 @@ use function App\Engine\opensAnswerCheck;
 function startBrainProgression(): void
 {
     $progressionFunction = function (): array {
-        $randProgressionSize = random_int(6, 10);
-        $randPosition = random_int(1, $randProgressionSize);
-        $randStepInProgression = random_int(1, 5);
+        $randProgressionSize = rand(6, 10);
+        $randPosition = rand(1, $randProgressionSize);
+        $randStepInProgression = rand(1, 5);
         $randProgressionArray = [1];
         $question = '';
         $result = '';
@@ -26,10 +26,8 @@ function startBrainProgression(): void
             }
         }
         $trueAnswer = $result;
-        $gameValueResult = $result;
-        $questionForComparisons = null;
-        $lineCalc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        return [$lineCalc, $trueAnswer, $question, $questionForComparisons, $gameValueResult];
+        $lineOfRulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
     };
     opensAnswerCheck($progressionFunction);
 }

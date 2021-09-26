@@ -12,11 +12,11 @@ function opensAnswerCheck(callable $function): bool
     line("Hello, %s!", $name);
     $count = 3;
     for ($i = 0; $i < $count; $i++) {
-        [$gameQuestion, $trueAnswer, $question, $questionForComparisons, $gameValueResult] = $function();
-        line("{$gameQuestion}");
+        [$lineOfRulesOfTheGame, $trueAnswer, $question] = $function();
+        line("{$lineOfRulesOfTheGame}");
         line("Question: {$question}");
         $answer = prompt('Your answer');
-        if ($answer == $questionForComparisons || $answer == $gameValueResult) {
+        if ($answer == $trueAnswer) {
             line('Correct!');
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$trueAnswer}'. Let's try again, {$name}!");
