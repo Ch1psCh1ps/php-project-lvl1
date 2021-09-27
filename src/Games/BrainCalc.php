@@ -4,7 +4,7 @@ namespace Brain\Games\BrainCalc;
 
 use function App\Engine\startGame;
 
-function findResultOperator($randomOperatorEnd, $randomInt, $randomInt1): int
+function findResultOperator(string $randomOperatorEnd, int $randomInt, int $randomInt1): int
 {
     $result = 0;
     switch ($randomOperatorEnd) {

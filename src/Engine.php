@@ -5,7 +5,7 @@ namespace App\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function startGame(callable $function, string $rules)
+function startGame(callable $function, string $rules) : bool
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -25,4 +25,5 @@ function startGame(callable $function, string $rules)
         }
     }
     line("Congratulations, {$name}!");
+    return true;
 }
