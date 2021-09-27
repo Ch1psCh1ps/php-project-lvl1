@@ -2,7 +2,7 @@
 
 namespace Brain\Games\BrainPrime;
 
-use function App\Engine\opensAnswerCheck;
+use function App\Engine\startGame;
 
 function verifyPrimeNumber(int $tally): int
 {
@@ -19,13 +19,13 @@ function verifyPrimeNumber(int $tally): int
 
 function startBrainPrime(): void
 {
-    $primeFunction = function (): array {
+    $roundDataGenerator = function (): array {
         $randomInt = rand(1, 50);
         $question = $randomInt;
         $result = verifyPrimeNumber($randomInt);
         $trueAnswer = ($result === 1) ? 'yes' : 'no';
-        $lineOfRulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
+        return [$trueAnswer, $question];
     };
-    opensAnswerCheck($primeFunction);
+    $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    startGame($roundDataGenerator, $rules);
 }

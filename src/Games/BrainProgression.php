@@ -2,11 +2,11 @@
 
 namespace Brain\Games\BrainProgression;
 
-use function App\Engine\opensAnswerCheck;
+use function App\Engine\startGame;
 
 function startBrainProgression(): void
 {
-    $progressionFunction = function (): array {
+    $roundDataGenerator = function (): array {
         $randProgressionSize = rand(6, 10);
         $randPosition = rand(1, $randProgressionSize);
         $randStepInProgression = rand(1, 5);
@@ -26,8 +26,8 @@ function startBrainProgression(): void
             }
         }
         $trueAnswer = $result;
-        $lineOfRulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
+        return [$trueAnswer, $question];
     };
-    opensAnswerCheck($progressionFunction);
+    $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    startGame($roundDataGenerator, $rules);
 }

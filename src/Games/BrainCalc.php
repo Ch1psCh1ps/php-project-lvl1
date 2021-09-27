@@ -2,32 +2,42 @@
 
 namespace Brain\Games\BrainCalc;
 
-use function App\Engine\opensAnswerCheck;
+use function App\Engine\startGame;
+
+function findResultOperator($randomOperatorEnd, $randomInt, $randomInt1): int
+{
+    $result = 0;
+    switch ($randomOperatorEnd) {
+        case '-':
+            $result = $randomInt - $randomInt1;
+            break;
+        case '+':
+            $result = $randomInt + $randomInt1;
+            break;
+        case '*':
+            $result = $randomInt * $randomInt1;
+            break;
+        default:
+            echo 'Error';
+    }
+    return $result;
+}
 
 function startBrainCalc(): void
 {
-    $calcFunction = function (): array {
-        $lineOfRulesOfTheGame = 'What is the result of the expression?';
+    $roundDataGenerator = function (): array {
         $randomInt = rand(0, 99);
         $randomInt1 = rand(0, 99);
         $randomArray = ['+', '-', '*'];
-        $randomZnak = array_rand($randomArray, 1);
-        $randomZnakEnd = $randomArray[$randomZnak];
+        $randomOperator = array_rand($randomArray, 1);
+        $randomOperatorEnd = $randomArray[$randomOperator];
 
-        switch ($randomZnakEnd) {
-            case '-':
-                $result = $randomInt - $randomInt1;
-                break;
-            case '+':
-                $result = $randomInt + $randomInt1;
-                break;
-            default:
-                $result = $randomInt * $randomInt1;
-        }
+        $result = findResultOperator($randomOperatorEnd, $randomInt, $randomInt1);
 
-        $question = "{$randomInt} {$randomZnakEnd} {$randomInt1}";
+        $question = "{$randomInt} {$randomOperatorEnd} {$randomInt1}";
         $trueAnswer = "{$result}";
-        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
+        return [$trueAnswer, $question];
     };
-    opensAnswerCheck($calcFunction);
+    $rules = 'What is the result of the expression?';
+    startGame($roundDataGenerator, $rules);
 }

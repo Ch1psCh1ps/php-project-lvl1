@@ -2,11 +2,11 @@
 
 namespace Brain\Games\BrainGcd;
 
-use function App\Engine\opensAnswerCheck;
+use function App\Engine\startGame;
 
 function startBrainGcd(): void
 {
-    $gcdFunction = function (): array {
+    $roundDataGenerator = function (): array {
         $randomInt = rand(0, 99);
         $randomInt1 = rand(0, 99);
         $question = "{$randomInt} {$randomInt1}";
@@ -16,8 +16,8 @@ function startBrainGcd(): void
             $randomInt1 = $m;
         }
         $trueAnswer = "{$randomInt}";
-        $lineOfRulesOfTheGame = 'Find the greatest common divisor of given numbers.';
-        return [$lineOfRulesOfTheGame, $trueAnswer, $question];
+        return [$trueAnswer, $question];
     };
-    opensAnswerCheck($gcdFunction);
+    $rules = 'Find the greatest common divisor of given numbers.';
+    startGame($roundDataGenerator, $rules);
 }
