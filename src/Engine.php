@@ -5,16 +5,15 @@ namespace App\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function startGame(callable $function, string $rules): bool
+function startGame(callable $roundDataGenerator, string $rules): bool
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     $roundCount = 3;
-    $rulesOfTheGame = $rules;
-    line("{$rulesOfTheGame}");
+    line("{$rules}");
     for ($i = 0; $i < $roundCount; $i++) {
-        [$trueAnswer, $question] = $function();
+        [$trueAnswer, $question] = $roundDataGenerator();
         line("Question: {$question}");
         $answer = prompt('Your answer');
         if ($answer == $trueAnswer) {
