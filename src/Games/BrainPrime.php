@@ -20,9 +20,9 @@ function isPrimeNumber(int $tally): int
 function startBrainPrime(): void
 {
     $roundDataGenerator = function (): array {
-        $randNumberGeneration = rand(1, 50);
-        $question = $randNumberGeneration;
-        $result = isPrimeNumber($randNumberGeneration);
+        $numberGeneration = rand(1, 50);
+        $question = $numberGeneration;
+        $result = isPrimeNumber($numberGeneration);
         $trueAnswer = ($result === 1) ? 'yes' : 'no';
         return [$trueAnswer, $question];
     };

@@ -7,20 +7,20 @@ use function App\Engine\startGame;
 function startBrainProgression(): void
 {
     $roundDataGenerator = function (): array {
-        $randProgressionSize = rand(6, 10);
-        $randPosition = rand(1, $randProgressionSize);
-        $randStepInProgression = rand(1, 5);
-        $randProgressionArray = [1];
+        $progressionSize = rand(6, 10);
+        $position = rand(1, $progressionSize);
+        $stepInProgression = rand(1, 5);
+        $randProgression = [1];
         $question = '';
         $result = '';
-        for ($t = 0; $t <= $randProgressionSize; $t++) {
-            if ($t === $randPosition) {
+        for ($t = 0; $t <= $progressionSize; $t++) {
+            if ($t === $position) {
                 $value = "..";
-                $result = "{$randProgressionArray[$randPosition]}";
+                $result = "{$randProgression[$position]}";
             } else {
-                $value = $randProgressionArray[$t];
+                $value = $randProgression[$t];
             }
-            $randProgressionArray[] = $randProgressionArray[$t] + $randStepInProgression;
+            $randProgression[] = $randProgression[$t] + $stepInProgression;
             if ($t >= 1) {
                 $question .= "{$value} ";
             }
