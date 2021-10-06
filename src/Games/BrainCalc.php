@@ -4,15 +4,15 @@ namespace Brain\Games\BrainCalc;
 
 use function App\Engine\startGame;
 
-function findResultOperator(string $randomOperatorEnd, int $randomInt, int $randomInt1): int
+function isResultOperator(string $randomOperatorEnd, int $randNumberGeneration, int $randNumberGeneration1): int
 {
     switch ($randomOperatorEnd) {
         case '-':
-            return $randomInt - $randomInt1;
+            return $randNumberGeneration - $randNumberGeneration1;
         case '+':
-            return $randomInt + $randomInt1;
+            return $randNumberGeneration + $randNumberGeneration1;
         case '*':
-            return $randomInt * $randomInt1;
+            return $randNumberGeneration * $randNumberGeneration1;
         default:
             throw new \Exception('Error');
     }
@@ -21,15 +21,15 @@ function findResultOperator(string $randomOperatorEnd, int $randomInt, int $rand
 function startBrainCalc(): void
 {
     $roundDataGenerator = function (): array {
-        $randomInt = rand(0, 99);
-        $randomInt1 = rand(0, 99);
-        $randomArray = ['+', '-', '*'];
-        $randomOperator = array_rand($randomArray, 1);
-        $randomOperatorEnd = $randomArray[$randomOperator];
+        $randNumberGeneration = rand(0, 99);
+        $randNumberGeneration1 = rand(0, 99);
+        $randOperatorArray = ['+', '-', '*'];
+        $randomOperator = array_rand($randOperatorArray, 1);
+        $randomOperatorEnd = $randOperatorArray[$randomOperator];
 
-        $result = findResultOperator($randomOperatorEnd, $randomInt, $randomInt1);
+        $result = isResultOperator($randomOperatorEnd, $randNumberGeneration, $randNumberGeneration1);
 
-        $question = "{$randomInt} {$randomOperatorEnd} {$randomInt1}";
+        $question = "{$randNumberGeneration} {$randomOperatorEnd} {$randNumberGeneration1}";
         $trueAnswer = "{$result}";
         return [$trueAnswer, $question];
     };

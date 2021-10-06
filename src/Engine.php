@@ -10,9 +10,9 @@ function startGame(callable $roundDataGenerator, string $rules): bool
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $roundCount = 3;
+    $roundsCount = 3;
     line("{$rules}");
-    for ($i = 0; $i < $roundCount; $i++) {
+    for ($i = 0; $i < $roundsCount; $i++) {
         [$trueAnswer, $question] = $roundDataGenerator();
         line("Question: {$question}");
         $answer = prompt('Your answer');
