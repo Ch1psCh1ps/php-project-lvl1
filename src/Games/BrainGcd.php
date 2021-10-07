@@ -7,15 +7,15 @@ use function App\Engine\startGame;
 function startBrainGcd(): void
 {
     $roundDataGenerator = function (): array {
-        $numberGeneration = rand(0, 99);
-        $numberGeneration1 = rand(0, 99);
-        $question = "{$numberGeneration} {$numberGeneration1}";
-        while ($numberGeneration1 != 0) {
-            $m = $numberGeneration % $numberGeneration1;
-            $numberGeneration = $numberGeneration1;
-            $numberGeneration1 = $m;
+        $number = rand(0, 99);
+        $number1 = rand(0, 99);
+        $question = "{$number} {$number1}";
+        while ($number1 != 0) {
+            $m = $number % $number1;
+            $number = $number1;
+            $number1 = $m;
         }
-        $trueAnswer = "{$numberGeneration}";
+        $trueAnswer = "{$number}";
         return [$trueAnswer, $question];
     };
     $rules = 'Find the greatest common divisor of given numbers.';

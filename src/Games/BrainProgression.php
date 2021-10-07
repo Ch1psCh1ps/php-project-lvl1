@@ -10,17 +10,17 @@ function startBrainProgression(): void
         $progressionSize = rand(6, 10);
         $position = rand(1, $progressionSize);
         $stepInProgression = rand(1, 5);
-        $randProgression = [1];
+        $progression = [1];
         $question = '';
         $result = '';
         for ($t = 0; $t <= $progressionSize; $t++) {
             if ($t === $position) {
                 $value = "..";
-                $result = "{$randProgression[$position]}";
+                $result = "{$progression[$position]}";
             } else {
-                $value = $randProgression[$t];
+                $value = $progression[$t];
             }
-            $randProgression[] = $randProgression[$t] + $stepInProgression;
+            $progression[] = $progression[$t] + $stepInProgression;
             if ($t >= 1) {
                 $question .= "{$value} ";
             }
