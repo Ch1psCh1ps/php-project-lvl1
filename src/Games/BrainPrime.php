@@ -4,7 +4,7 @@ namespace Brain\Games\BrainPrime;
 
 use function App\Engine\startGame;
 
-function isPrimeNumber(int $tally): int
+function isDefinitionPrimeNum(int $tally): int
 {
     if ($tally === 1) {
         return 0;
@@ -22,7 +22,7 @@ function startBrainPrime(): void
     $roundDataGenerator = function (): array {
         $number = rand(1, 50);
         $question = $number;
-        $result = isPrimeNumber($number);
+        $result = isDefinitionPrimeNum($number);
         $trueAnswer = ($result === 1) ? 'yes' : 'no';
         return [$trueAnswer, $question];
     };

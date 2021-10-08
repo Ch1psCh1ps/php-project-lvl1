@@ -4,9 +4,9 @@ namespace Brain\Games\BrainCalc;
 
 use function App\Engine\startGame;
 
-function isResultOperator(string $operators, int $number, int $number1): int
+function isResultOperator(string $operator, int $number, int $number1): int
 {
-    switch ($operators) {
+    switch ($operator) {
         case '-':
             return $number - $number1;
         case '+':
